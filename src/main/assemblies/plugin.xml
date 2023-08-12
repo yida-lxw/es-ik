@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <assembly>
-    <id>analysis-ik-release</id>
+    <id>es-ik</id>
     <formats>
         <format>zip</format>
     </formats>

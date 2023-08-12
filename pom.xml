@@ -12,7 +12,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <elasticsearch.version>7.11.2</elasticsearch.version>
         <elasticsearch.assembly.descriptor>${project.basedir}/src/main/assemblies/plugin.xml</elasticsearch.assembly.descriptor>
-        <elasticsearch.plugin.name>ik</elasticsearch.plugin.name>
+        <elasticsearch.plugin.name>es-ik</elasticsearch.plugin.name>
         <elasticsearch.plugin.classname>org.elasticsearch.plugin.analysis.ik.IKAnalysisPlugin</elasticsearch.plugin.classname>
         <elasticsearch.plugin.jvm>true</elasticsearch.plugin.jvm>
         <tests.rest.load_packaged>false</tests.rest.load_packaged>
@@ -86,6 +86,7 @@
     </dependencies>
 
     <build>
+        <finalName>es-ik</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
