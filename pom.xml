@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
+    <groupId>org.elasticsearch</groupId>
     <artifactId>es-ik</artifactId>
     <version>1.0</version>
 
@@ -18,6 +18,7 @@
         <tests.rest.load_packaged>false</tests.rest.load_packaged>
         <skip.unit.tests>true</skip.unit.tests>
 
+        <ik.version>8.1</ik.version>
         <lucene.version>8.7.0</lucene.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <httpclient.version>4.5.14</httpclient.version>
@@ -26,6 +27,22 @@
     </properties>
 
     <dependencies>
+        <!-- IK -->
+        <dependency>
+            <groupId>io.github.yida-lxw</groupId>
+            <artifactId>IK</artifactId>
+            <version>${ik.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-analyzers-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-queryparser</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- Lucene -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -54,6 +71,12 @@
             <artifactId>elasticsearch</artifactId>
             <version>${elasticsearch.version}</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Pinyin4j -->

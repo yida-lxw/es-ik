@@ -22,10 +22,10 @@ public class IKTokenizerFactory extends AbstractTokenizerFactory {
         this.environment = env;
         this.settings = settings;
         configuration = DefaultConfig.getInstance();
-        boolean useSmart = settings.get("use_smart", "false").equals("true");
-        boolean enableLowercase = settings.get("enable_lowercase", "true").equals("true");
-        boolean enableRemoteDict = settings.get("enable_remote_dict", "true").equals("true");
-        long remoteExtDictRefreshInterval = Long.valueOf(settings.get("remote_ext_dict_refresh_interval", "60"));
+        boolean useSmart = this.settings.get("use_smart", "false").equals("true");
+        boolean enableLowercase = this.settings.get("enable_lowercase", "true").equals("true");
+        boolean enableRemoteDict = this.settings.get("enable_remote_dict", "true").equals("true");
+        long remoteExtDictRefreshInterval = Long.valueOf(this.settings.get("remote_ext_dict_refresh_interval", "60"));
         configuration.setUseSmart(useSmart);
         configuration.setEnableLowercase(enableLowercase);
         configuration.setEnableRemoteDict(enableRemoteDict);
