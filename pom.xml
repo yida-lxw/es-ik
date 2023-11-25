@@ -18,6 +18,7 @@
         <tests.rest.load_packaged>false</tests.rest.load_packaged>
         <skip.unit.tests>true</skip.unit.tests>
 
+        <ik.version>8.1</ik.version>
         <lucene.version>8.8.0</lucene.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <httpclient.version>4.5.14</httpclient.version>
@@ -26,6 +27,23 @@
     </properties>
 
     <dependencies>
+        <!-- IK -->
+        <dependency>
+            <groupId>io.github.yida-lxw</groupId>
+            <artifactId>IK</artifactId>
+            <version>${ik.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-analyzers-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-queryparser</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- Lucene -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
