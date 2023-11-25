@@ -54,6 +54,12 @@
             <artifactId>elasticsearch</artifactId>
             <version>${elasticsearch.version}</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Pinyin4j -->
