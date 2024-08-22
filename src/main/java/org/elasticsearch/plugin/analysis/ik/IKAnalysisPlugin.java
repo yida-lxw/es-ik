@@ -27,7 +27,7 @@ public class IKAnalysisPlugin extends Plugin implements AnalysisPlugin {
     public Map<String, AnalysisModule.AnalysisProvider<AnalyzerProvider<? extends Analyzer>>> getAnalyzers() {
         Map<String, AnalysisModule.AnalysisProvider<AnalyzerProvider<? extends Analyzer>>> extra = new HashMap<>();
         extra.put("ik_smart", IKAnalyzerProvider::getIKSmartAnalyzerProvider);
-        extra.put("ik_max_word", IKAnalyzerProvider::getIKSmartAnalyzerProvider);
+        extra.put("ik_max_word", IKAnalyzerProvider::getIKAnalyzerProvider);
         return extra;
     }
 }
