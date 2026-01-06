@@ -24,16 +24,9 @@
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <excludes>
                 <exclude>org.elasticsearch:elasticsearch</exclude>
+                <exclude>org.apache.logging.log4j:log4j-api</exclude>
+                <exclude>org.apache.logging.log4j:log4j-core</exclude>
             </excludes>
-        </dependencySet>
-        <dependencySet>
-            <outputDirectory/>
-            <useProjectArtifact>true</useProjectArtifact>
-            <useTransitiveFiltering>true</useTransitiveFiltering>
-            <includes>
-                <include>org.apache.httpcomponents:httpclient</include>
-                <include>com.belerweb:pinyin4j</include>
-            </includes>
         </dependencySet>
     </dependencySets>
 </assembly>

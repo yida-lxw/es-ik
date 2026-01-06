@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.elasticsearch</groupId>
+    <groupId>groupId</groupId>
     <artifactId>es-ik</artifactId>
     <version>1.0</version>
 
@@ -43,6 +43,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- Lucene -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -75,6 +76,10 @@
                 <exclusion>
                     <groupId>org.apache.logging.log4j</groupId>
                     <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

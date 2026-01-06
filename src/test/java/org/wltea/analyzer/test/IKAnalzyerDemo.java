@@ -47,7 +47,7 @@ public class IKAnalzyerDemo {
         //获取Lucene的TokenStream对象
         TokenStream ts = null;
         try {
-            ts = analyzer.tokenStream("myfield", new StringReader("政治传记关于曹家沟道路规则调整的批复T450 SKU-112 80KG 365天 八小时 联想2000 粤TB01235"));
+            ts = analyzer.tokenStream("myfield", new StringReader("国务院关于核定公布南海西北陆坡一号、二号沉船水下文物保护区的批复91-1-1佘建伟政治传记关于曹家沟道路规则调整的批复T450 SKU-112 80KG 365天 八小时 联想2000 粤TB01235"));
             //获取词元位置属性
             OffsetAttribute offset = ts.addAttribute(OffsetAttribute.class);
             //获取词元文本属性
