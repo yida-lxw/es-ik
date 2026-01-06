@@ -14,12 +14,13 @@ public class IKAnalyzerProvider extends AbstractIndexAnalyzerProvider<IKAnalyzer
         super(indexSettings,name, settings);
         Configuration configuration = DefaultConfig.getInstance();
         boolean enableLowercase = settings.get("enable_lowercase", "true").equals("true");
-        boolean enableRemoteDict = settings.get("enable_remote_dict", "true").equals("true");
+        boolean enableRemoteDict = settings.get("enable_remote_ext_dict", "true").equals("true");
         long remoteExtDictRefreshInterval = Long.valueOf(settings.get("remote_ext_dict_refresh_interval", "60"));
         configuration.setUseSmart(useSmart);
         configuration.setEnableLowercase(enableLowercase);
-        configuration.setEnableRemoteDict(enableRemoteDict);
+        configuration.setEnableRemoteExtDict(enableRemoteDict);
         configuration.setRemoteExtDictRefreshInterval(remoteExtDictRefreshInterval);
+        logger.info("configuration.useSmart():{}", configuration.useSmart());
         analyzer = new IKAnalyzer(configuration.useSmart());
     }
 

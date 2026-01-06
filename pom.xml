@@ -10,7 +10,7 @@
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <elasticsearch.version>7.11.2</elasticsearch.version>
+        <elasticsearch.version>7.12.1</elasticsearch.version>
         <elasticsearch.assembly.descriptor>${project.basedir}/src/main/assemblies/plugin.xml</elasticsearch.assembly.descriptor>
         <elasticsearch.plugin.name>es-ik</elasticsearch.plugin.name>
         <elasticsearch.plugin.classname>org.elasticsearch.plugin.analysis.ik.IKAnalysisPlugin</elasticsearch.plugin.classname>
@@ -18,7 +18,8 @@
         <tests.rest.load_packaged>false</tests.rest.load_packaged>
         <skip.unit.tests>true</skip.unit.tests>
 
-        <lucene.version>8.7.0</lucene.version>
+        <ik.version>8.1</ik.version>
+        <lucene.version>8.8.0</lucene.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <httpclient.version>4.5.14</httpclient.version>
         <slf4j.version>2.0.7</slf4j.version>
@@ -26,6 +27,23 @@
     </properties>
 
     <dependencies>
+        <!-- IK -->
+        <dependency>
+            <groupId>io.github.yida-lxw</groupId>
+            <artifactId>IK</artifactId>
+            <version>${ik.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-analyzers-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-queryparser</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- Lucene -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -54,6 +72,12 @@
             <artifactId>elasticsearch</artifactId>
             <version>${elasticsearch.version}</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Pinyin4j -->
